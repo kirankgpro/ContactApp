@@ -1,6 +1,5 @@
 package com.kiran.contactapp.web;
 
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,26 +14,10 @@ import com.kiran.contactapp.service.ContactService;
 
 @Controller
 
-public class TestController {
-	
-	String name;
-	@Autowired
-	Environment env;
-	
-	@Autowired
-	ContactService testService;
-	
-	@RequestMapping("/test")
-	public String testController(Model model) {
-		model.addAttribute("test", "kiran");
-		name="i am kiran";
-		//testService.save();
-		return "test";
-	}
-	
-	@GetMapping("/check")
+public class MainController {
+
+	@GetMapping("/")
 	public String check(Model model) {
-		model.addAttribute("test1", name);
-		return "test";
+		return "index";
 	}
 }
