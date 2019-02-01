@@ -3,6 +3,8 @@ package com.kiran.contactapp.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.orm.hibernate5.HibernateExceptionTranslator;
+import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -14,15 +16,17 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableWebMvc
 
 @ComponentScan(basePackages= {"com.kiran.contactapp.web"})
-
+ 
 public class SpringWebConfig implements WebMvcConfigurer{
 	
 	
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/**").addResourceLocations("/");
+		registry.addResourceHandler("/static/**").addResourceLocations("/static/");
 		
 	}
  
+	
+	
 	@Bean
 	ViewResolver viewResolver() {
 		InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();

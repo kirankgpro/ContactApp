@@ -9,31 +9,48 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+import org.springframework.lang.NonNull;
 
 
-@Entity
+@Entity 
 public class User {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer userId;
 	
+	@NotEmpty
+	@Size(min=3,message="should contain minimum 3 letters")
 	@Column
 	private String name;
+	
+	@Size(min=10,message="Entered number is wrong")
 	@Column
 	private String phone;
+	
 	@Column
 	private String email;
+	
 	@Column
 	private String address;
+	
+	@NotEmpty
+	@Size(min=3,message="should contain minimum 3 letters")
 	@Column(nullable=false,unique=true)
 	private String loginName;
+	
+	@NotEmpty
+	@Size(min=5,message="password not strong, should contain minimum 5 letters")
 	@Column
 	private String password;
+	
 	@Column(nullable=false,columnDefinition="int default 2")
-	private Integer role;
+	private Integer role = 2;
 	@Column(nullable=false,columnDefinition="int default 1")
-	private Integer loginStatus;
+	private Integer loginStatus = 1;
 	
 	@OneToMany(mappedBy="user")
 	private Collection<Contact> contact = new ArrayList<Contact>();

@@ -12,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -36,6 +37,11 @@ public class SpringRootConfig {
 		dataSource.setInitialSize(Integer.valueOf(env.getProperty("jdbc.initialsize")));
 		return dataSource;
 	}
+	
+	@Bean
+	   public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
+	      return new PersistenceExceptionTranslationPostProcessor(); 
+	   }
 	
 	@Bean
     public LocalSessionFactoryBean getSessionFactory()

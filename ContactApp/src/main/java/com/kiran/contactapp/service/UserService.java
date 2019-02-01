@@ -23,5 +23,9 @@ public interface UserService {
 	 * @throws UserBlockedException when user account is blocked
 	 */
 	public User login(String loginName, String password) throws UserBlockedException;
+	
+	public Integer saveUser(User user);
+
+	public User loginAuthenticate(String name, String password);
 
 }
