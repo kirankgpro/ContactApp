@@ -32,38 +32,43 @@
 			<div class="card-body">
 				<h5 class="card-title">Contacts</h5>
 				<form action="${pageContext.request.contextPath}/savecontact" method="POST">
+					
+							<input type="hidden" class="form-control" name="contactId" value="${contact.contactId}"
+								placeholder="id">
+					
+					
 					<div class="form-group row">
 						<label for="name" class="col-sm-2 col-form-label">Name</label>
 						<div class="col-sm-10">
-							<input type="email" class="form-control" name="name"
+							<input type="text" class="form-control" name="name" value="${contact.name}"
 								placeholder="Name">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label for="phone" class="col-sm-2 col-form-label">Phone</label>
 						<div class="col-sm-10">
-							<input type="number" class="form-control" name=phone
+							<input type="number" class="form-control" name="phone" value="${contact.phone}"
 								placeholder="97XXXXXXXX">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label for="email" class="col-sm-2 col-form-label">Email</label>
 						<div class="col-sm-10">
-							<input type="email" class="form-control" name="email"
+							<input type="email" class="form-control" name="email" value="${contact.email}"
 								placeholder="abc@example.com">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label for="ddress" class="col-sm-2 col-form-label">Address</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" name="address"
+							<input type="text" class="form-control" name="address" value="${contact.address}"
 								placeholder="Address">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label for="remark" class="col-sm-2 col-form-label">Remark</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" name="remark"
+							<input type="text" class="form-control" name="remark" value="${contact.remark}"
 								placeholder="Remark">
 						</div>
 					</div>
@@ -76,7 +81,7 @@
 						</div>
 					</div>
 				</form>
-
+			<p style="color:red;">${msg}</p>
 			</div>
 
 		</div>
