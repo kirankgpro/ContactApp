@@ -26,6 +26,16 @@ public class Contact {
 	@Column
 	private String remark;
 	
+/* 
+	@Column(name = "startTime", columnDefinition="DATETIME")
+	@Temporal(TemporalType.TIMESTAMP)
+	private java.util.Date dateAndTime;
+	
+	@Lob
+ 	@Column(name="BOOK_IMAGE", nullable=false, columnDefinition="blob")
+	private byte[] image; 
+*/
+	
 	@ManyToOne
 	@JoinColumn(name="userId")
 	private User user;
