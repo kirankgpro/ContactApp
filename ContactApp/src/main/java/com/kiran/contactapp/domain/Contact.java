@@ -27,6 +27,7 @@ public class Contact {
 	private String remark;
 	
 /* 
+	@DateTimeFormat(pattern = "dd/MM/yyyy") //in this pattern the date is coming from client so it will be converted into date object
 	@Column(name = "startTime", columnDefinition="DATETIME")
 	@Temporal(TemporalType.TIMESTAMP)
 	private java.util.Date dateAndTime;
