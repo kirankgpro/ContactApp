@@ -7,7 +7,7 @@ import com.kiran.contactapp.domain.Contact;
 public interface ContactService {
 
 
-	public void update();
+	public void update(Contact contact);
 
 	public void save(Contact contact);
 	
