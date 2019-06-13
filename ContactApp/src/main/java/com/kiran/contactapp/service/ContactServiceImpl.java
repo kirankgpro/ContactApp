@@ -19,7 +19,7 @@ public class ContactServiceImpl implements ContactService{
 	private ContactDao contactDao;
 	 
 	
-	public void update() {
+	public void update(Contact contact) {
 		// TODO Auto-generated method stub
 		
 	}
