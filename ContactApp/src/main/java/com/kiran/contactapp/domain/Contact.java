@@ -36,10 +36,16 @@ public class Contact {
  	@Column(name="BOOK_IMAGE", nullable=false, columnDefinition="blob")
 	private byte[] image; 
 	
-	//in java 8 java.time.LocalDateTime introduced can be used without timezone its easy to map date and time
+	//in java 8 java.time.LocalDateTime introduced can be used without timezone 
 	@Column(columnDefinition="DATETIME")
 	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime createdDate;
+	
+	//before java 8 for datetime mapping without time zone
+	@Column(columnDefinition="DATETIME")
+    	@JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createdDate;
 */
 	
 	@ManyToOne
