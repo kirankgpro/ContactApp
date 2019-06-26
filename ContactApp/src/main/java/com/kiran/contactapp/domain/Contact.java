@@ -27,6 +27,7 @@ public class Contact {
 	private String remark;
 	
 /* 
+	//@DateTimeFormat(pattern="yyyy-MM-dd'T'HH:mm:ss.SSSXXX") //this is standard iso 8601 reques should be like 2001-01-30T01:30:00.000%2B00:00
 	@DateTimeFormat(pattern = "dd/MM/yyyy") //in this pattern the date is coming from client so it will be converted into date object
 	@Column(name = "startTime", columnDefinition="DATETIME")
 	@Temporal(TemporalType.Date)
@@ -36,16 +37,7 @@ public class Contact {
  	@Column(name="BOOK_IMAGE", nullable=false, columnDefinition="blob")
 	private byte[] image; 
 	
-	//in java 8 java.time.LocalDateTime introduced can be used without timezone 
-	@Column(columnDefinition="DATETIME")
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
-	private LocalDateTime createdDate;
 	
-	//before java 8 for datetime mapping without time zone
-	@Column(columnDefinition="DATETIME")
-    	@JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date createdDate;
 */
 	
 	@ManyToOne
