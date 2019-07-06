@@ -2,6 +2,7 @@ package com.kiran.contactapp.service;
 
 import javax.transaction.Transactional;
 
+import org.hibernate.type.descriptor.java.InstantJavaDescriptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -51,6 +52,20 @@ public class UserServiceImpl implements UserService {
 	public User findUserById(int id) {
 		return userDao.findUserById(id);
 	}
+
+	@Override
+	public String check() {
+		int i=0;
+		StringBuilder builder = new StringBuilder();
+		for(int k=0;k<3000000;k++) {
+			builder.append(i+"\n");
+			i++;
+			System.out.println(Thread.currentThread().getName()+" i="+i);
+			
+			}
+		return builder.toString();
+		}
+	
 	
 	
 }

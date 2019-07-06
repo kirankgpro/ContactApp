@@ -3,7 +3,7 @@ package com.kiran.contactapp.command;
 import javax.validation.Valid;
 
 import com.kiran.contactapp.domain.User;
-
+  
 public class UserCommand {
 
 	@Valid

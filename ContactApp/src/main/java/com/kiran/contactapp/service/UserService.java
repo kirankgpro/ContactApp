@@ -29,4 +29,6 @@ public interface UserService {
 	public User loginAuthenticate(String name, String password);
 
 	public User findUserById(int id);
+
+	public String check();
 }
